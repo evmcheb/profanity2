@@ -1,5 +1,7 @@
 # profanity2
 
+## Update: use [1inch's profanity2](https://github.com/1inch/profanity2) instead. It doens't generate private keys at all. 
+
 This is a fork of [Profanity](https://github.com/johguse/profanity) that uses safe 64-bit seed values. 
 
 ```
