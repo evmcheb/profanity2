@@ -108,16 +108,17 @@ cl_ulong4 Dispatcher::Device::createSeed() {
 #else
 	// Randomize private keys
 	std::random_device rd;
-	std::uint64_t value = rd();
-	value = (value << 32) | rd();
-	std::mt19937_64 eng(value);
+	std::mt19937_64 eng1(rd());
+	std::mt19937_64 eng2(rd());
+	std::mt19937_64 eng3(rd());
+	std::mt19937_64 eng4(rd());
 	std::uniform_int_distribution<cl_ulong> distr;
 
 	cl_ulong4 r;
-	r.s[0] = distr(eng);
-	r.s[1] = distr(eng);
-	r.s[2] = distr(eng);
-	r.s[3] = distr(eng);
+	r.s[0] = distr(eng1);
+	r.s[1] = distr(eng2);
+	r.s[2] = distr(eng3);
+	r.s[3] = distr(eng4);
 	return r;
 #endif
 }
